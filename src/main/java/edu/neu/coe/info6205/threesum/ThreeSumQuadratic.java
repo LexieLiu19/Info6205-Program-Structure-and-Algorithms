@@ -27,15 +27,15 @@ public class ThreeSumQuadratic implements ThreeSum {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{-2, 0, 2};
+        int[] nums = new int[]{30, -40, -20, -10, 40, 0, 10, 5};
         ThreeSumQuadratic tsq = new ThreeSumQuadratic(nums);
         Triple[] ts = tsq.getTriples();
         for (Triple t : ts) {
             System.out.println(t);
-          
+
         }
-        List<Triple> res = tsq.getTriples(1);
-        System.out.println(res);
+//        List<Triple> res = tsq.getTriples(1);
+//        System.out.println(res);
     }
 
     public Triple[] getTriples() {
@@ -54,22 +54,21 @@ public class ThreeSumQuadratic implements ThreeSum {
     public List<Triple> getTriples(int j) {
         List<Triple> triples = new ArrayList<>();
         // FIXME : for each candidate, test if a[i] + a[j] + a[k] = 0.
-        // END
-
-        int num = a[j];
-        int lo = j + 1;
-        int hi = length - 1;
-
-        while (lo < hi) {
-            int sum = num + a[lo] + a[hi];
-            if (sum == 0) {
-                triples.add(new Triple(num, a[lo], a[hi]));
-                lo++;
-                hi--;
-            } else if (sum > 0) hi--;
-            else lo++;
+        for (int i = 0; i < j; i++) {
+            for (int k = j + 1; k < a.length; k++) {
+                if (a[i] + a[j] + a[k] == 0) {
+                    Triple temp = new Triple(a[i], a[j], a[k]);
+                    boolean duplicate = false;
+                    for (Triple t : triples) {
+                        if (t.equals(temp)) {
+                            duplicate = true;
+                            break;
+                        }
+                    }
+                    if (!duplicate) triples.add(temp);
+                }
+            }
         }
-
         return triples;
     }
 }
