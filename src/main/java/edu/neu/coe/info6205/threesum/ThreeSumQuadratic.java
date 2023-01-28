@@ -26,16 +26,14 @@ public class ThreeSumQuadratic implements ThreeSum {
         length = a.length;
     }
 
+    //ThreeSumQuadratic test demo:
     public static void main(String[] args) {
         int[] nums = new int[]{30, -40, -20, -10, 40, 0, 10, 5};
         ThreeSumQuadratic tsq = new ThreeSumQuadratic(nums);
         Triple[] ts = tsq.getTriples();
         for (Triple t : ts) {
             System.out.println(t);
-
         }
-//        List<Triple> res = tsq.getTriples(1);
-//        System.out.println(res);
     }
 
     public Triple[] getTriples() {
@@ -53,19 +51,10 @@ public class ThreeSumQuadratic implements ThreeSum {
      */
     public List<Triple> getTriples(int j) {
         List<Triple> triples = new ArrayList<>();
-        // FIXME : for each candidate, test if a[i] + a[j] + a[k] = 0.
-        for (int i = 0; i < j; i++) {
+        for (int i = j - 1; i >= 0; i--) {
             for (int k = j + 1; k < a.length; k++) {
                 if (a[i] + a[j] + a[k] == 0) {
-                    Triple temp = new Triple(a[i], a[j], a[k]);
-                    boolean duplicate = false;
-                    for (Triple t : triples) {
-                        if (t.equals(temp)) {
-                            duplicate = true;
-                            break;
-                        }
-                    }
-                    if (!duplicate) triples.add(temp);
+                    triples.add(new Triple(a[i], a[j], a[k]));
                 }
             }
         }
