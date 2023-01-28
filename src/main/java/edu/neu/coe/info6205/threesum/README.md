@@ -10,7 +10,11 @@ Date: Jan.28, 2023.
 
 ### 1. Unit Tests ScreenShots:
 
+1.1 Unit tests codes unchanged evidence:
 ![Unit tests codes unchanged evidence](/src/main/java/edu/neu/coe/info6205/threesum/evidences/Unit-tests-codes-unchanged.png)
+
+1.2 Unit tests passing evidence:
+![Unit tests passing evidence](/src/main/java/edu/neu/coe/info6205/threesum/evidences/unit_tests_passing.png)
 
 ### 2. Timing observations:
 
