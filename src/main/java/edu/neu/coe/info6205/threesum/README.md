@@ -7,3 +7,9 @@ Student Name: Xu Liu (liu.xu1@northeastern.edu)
 NUID: 002761429
 
 Date: Jan.28, 2023.
+
+### 1. Unit Tests ScreenShots:
+
+### 2. Timing observations:
+
+### 3. Why the quadratic method(s) work:
