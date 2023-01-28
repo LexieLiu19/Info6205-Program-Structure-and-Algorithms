@@ -2,7 +2,7 @@
 
 ## Assignment2: 2Sum Problem
 
-Student Name: Xu Liu (xuliu0925@gmail.com)
+Student Name: Xu Liu (liu.xu1@northeastern.edu)
 
 NUID: 002761429
 
