@@ -33,18 +33,22 @@ d. [Running Time Test Demo using class Stopwatch](https://github.com/LexieLiu19/
 2.2 Runing time table based on test demo:
 ![Running time table](/src/main/java/edu/neu/coe/info6205/threesum/evidences/runtime-data.png)
 
+2.3 Conclusion:
+
+In conclusion, when the data sample is small, the runtime differences among
+various methods are not significant. However, as the data sample becomes larger,
+the runtime differences gradually increase and the ThreeSumQuadraticWithCalipers
+method has the least runtime.
+
 ### 3. Why the quadratic method(s) work:
 
-The quadratic method works with the sorted array in non-descending order. First
-we iterate the array from index `0` to index `length-1`. Inside the loop, we use
-two pointers, one to the current index + 1(`i+1`) and the other to the of the
-last element of the array(`length-1`). These two pointers iterate through the
-remaining elements of the array, checking the sum of the current element and the
-pair of elements to which the two pointers
-point `array[i]+ array[pointer1] + array[pointer2]`. If the sum is 0, we add the
-three num the triple. Otherwise, we move the pointers accordingly: sum > 0, the
-start pointer + 1; sum < 0, the end pointer - 1;
+The quadratic method starts by iterating through the array and fixing an index
+as the middle index of the three values.Then it iterates from the middle index
++1 and middle index -1, checking if the sum of the three values is equal to
+zero. If the sum is equal to zero, it adds the triple to a list of triples.
 
-This method uses the ordered nature of the input array to avoid unnecessary
-comparisons. Since there are two nested loops, the total time complexity is O(
-n^2), which is much better than the cubic method.
+The time complexity of this algorithm is O(N^2) as it needs to check all pairs
+in the array. The first loop has a time complexity of O(N) and the second loop
+has a time complexity of O(N) as well. Therefore, the total time complexity is
+O(N^2)
+
