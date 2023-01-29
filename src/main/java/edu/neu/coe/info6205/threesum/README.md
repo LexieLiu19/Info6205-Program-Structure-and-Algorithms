@@ -52,3 +52,10 @@ in the array. The first loop has a time complexity of O(N) and the second loop
 has a time complexity of O(N) as well. Therefore, the total time complexity is
 O(N^2)
 
+It's important to be aware that the constructor's array must be ordered. This is
+due to the algorithm's reliance on the array's order in order to effectively
+solve the problem. If the array is not ordered, checking all possible
+combinations of three values would result in a temporal complexity of O(N^3).
+The approach can significantly minimize the amount of iterations required to
+locate a solution by presuming that the array is ordered.
+
