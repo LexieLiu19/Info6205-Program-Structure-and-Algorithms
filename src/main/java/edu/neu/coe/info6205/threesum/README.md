@@ -35,7 +35,7 @@ e. [Running Time Test Demo using class Stopwatch](https://github.com/LexieLiu19/
 2.2 Runing time table based on test demo:
 ![Running time table](/src/main/java/edu/neu/coe/info6205/threesum/evidences/runtime-data.png)
 
-** 2.3 Conclusion: **
+**2.3 Conclusion:**
 
 In conclusion, when the data sample is small, the runtime differences among
 various methods are not significant. However, as the data sample becomes larger,
