@@ -54,8 +54,7 @@ public class ThreeSumQuadraticWithCalipers implements ThreeSum {
                 while (a[lo] == a[lo - 1] && lo < hi) lo++;
             }
         }
-
-
+        
         return triples;
     }
 

@@ -28,6 +28,11 @@ d. [Running Time Test Demo using class Stopwatch](https://github.com/LexieLiu19/
 
 ### 2. Timing observations:
 
+2.1 Running Time Test Demo Screenshot:
+![Running time test](/src/main/java/edu/neu/coe/info6205/threesum/evidences/runtime.png)
+2.2 Runing time table based on test demo:
+![Running time table](/src/main/java/edu/neu/coe/info6205/threesum/evidences/runtime-table.png)
+
 ### 3. Why the quadratic method(s) work:
 
 The quadratic method works with the sorted array in non-descending order. First
