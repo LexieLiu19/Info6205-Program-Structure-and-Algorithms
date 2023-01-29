@@ -14,9 +14,11 @@ a. [ThreeSumCubic.java](https://github.com/LexieLiu19/Info6205-Program-Structure
 
 b. [ThreeSumQuadratic.java](https://github.com/LexieLiu19/Info6205-Program-Structure-and-Algorithms/blob/master/src/main/java/edu/neu/coe/info6205/threesum/ThreeSumQuadratic.java)
 
-c. [ThreeSumQuadraticWithCalipers.java](https://github.com/LexieLiu19/Info6205-Program-Structure-and-Algorithms/blob/master/src/main/java/edu/neu/coe/info6205/threesum/ThreeSumQuadraticWithCalipers.java)
+c. [ThreeSumQuadrithmic.java](https://github.com/LexieLiu19/Info6205-Program-Structure-and-Algorithms/blob/master/src/main/java/edu/neu/coe/info6205/threesum/ThreeSumQuadrithmic.java)
 
-d. [Running Time Test Demo using class Stopwatch](https://github.com/LexieLiu19/Info6205-Program-Structure-and-Algorithms/blob/master/src/main/java/edu/neu/coe/info6205/threesum/RunningTimeTestDemo.java)
+d. [ThreeSumQuadraticWithCalipers.java](https://github.com/LexieLiu19/Info6205-Program-Structure-and-Algorithms/blob/master/src/main/java/edu/neu/coe/info6205/threesum/ThreeSumQuadraticWithCalipers.java)
+
+e. [Running Time Test Demo using class Stopwatch](https://github.com/LexieLiu19/Info6205-Program-Structure-and-Algorithms/blob/master/src/main/java/edu/neu/coe/info6205/threesum/RunningTimeTestDemo.java)
 
 ### 1. Unit Tests ScreenShots:
 
