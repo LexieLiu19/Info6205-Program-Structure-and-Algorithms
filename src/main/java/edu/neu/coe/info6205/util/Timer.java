@@ -102,7 +102,6 @@ public class Timer {
 
         }
         return sumTime / n;
-
     }
 
     /**
