@@ -7,11 +7,43 @@ import java.util.function.UnaryOperator;
 
 public class Timer {
 
+    final static LazyLogger logger = new LazyLogger(Timer.class);
+    private long ticks = 0L;
+    private int laps = 0;
+    private boolean running = false;
+
     /**
      * Construct a new Timer and set it running.
      */
     public Timer() {
         resume();
+    }
+
+    /**
+     * Get the number of ticks from the system clock.
+     * <p>
+     * NOTE: (Maintain consistency) There are two system methods for getting the clock time.
+     * Ensure that this method is consistent with toMillisecs.
+     *
+     * @return the number of ticks for the system clock. Currently defined as nano time.
+     */
+    private static long getClock() {
+        // FIXME by replacing the following code
+        return System.nanoTime();
+        // END
+    }
+
+    /**
+     * NOTE: (Maintain consistency) There are two system methods for getting the clock time.
+     * Ensure that this method is consistent with getTicks.
+     *
+     * @param ticks the number of clock ticks -- currently in nanoseconds.
+     * @return the corresponding number of milliseconds.
+     */
+    private static double toMillisecs(long ticks) {
+        // FIXME by replacing the following code
+        return (double) ticks / 1000000.0;
+        // END
     }
 
     /**
@@ -57,8 +89,20 @@ public class Timer {
     public <T, U> double repeat(int n, Supplier<T> supplier, Function<T, U> function, UnaryOperator<T> preFunction, Consumer<U> postFunction) {
         logger.trace("repeat: with " + n + " runs");
         // FIXME: note that the timer is running when this method is called and should still be running when it returns. by replacing the following code
-         return 0;
-        // END 
+        double sumTime = 0.0;
+        for (int i = 0; i < n; i++) {
+            T value = supplier.get();
+            if (preFunction != null) value = preFunction.apply(value);
+            long startTime = getClock();
+            U result = function.apply(value);
+            if (postFunction != null) postFunction.accept(result);
+            long endTime = getClock();
+            sumTime += toMillisecs(endTime - startTime);
+            laps++;
+
+        }
+        return sumTime / n;
+
     }
 
     /**
@@ -148,10 +192,6 @@ public class Timer {
                 '}';
     }
 
-    private long ticks = 0L;
-    private int laps = 0;
-    private boolean running = false;
-
     // NOTE: Used by unit tests
     private long getTicks() {
         return ticks;
@@ -166,35 +206,6 @@ public class Timer {
     private boolean isRunning() {
         return running;
     }
-
-    /**
-     * Get the number of ticks from the system clock.
-     * <p>
-     * NOTE: (Maintain consistency) There are two system methods for getting the clock time.
-     * Ensure that this method is consistent with toMillisecs.
-     *
-     * @return the number of ticks for the system clock. Currently defined as nano time.
-     */
-    private static long getClock() {
-        // FIXME by replacing the following code
-         return 0;
-        // END 
-    }
-
-    /**
-     * NOTE: (Maintain consistency) There are two system methods for getting the clock time.
-     * Ensure that this method is consistent with getTicks.
-     *
-     * @param ticks the number of clock ticks -- currently in nanoseconds.
-     * @return the corresponding number of milliseconds.
-     */
-    private static double toMillisecs(long ticks) {
-        // FIXME by replacing the following code
-         return 0;
-        // END 
-    }
-
-    final static LazyLogger logger = new LazyLogger(Timer.class);
 
     static class TimerException extends RuntimeException {
         public TimerException() {
