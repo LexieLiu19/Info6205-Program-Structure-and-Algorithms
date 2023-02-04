@@ -17,6 +17,6 @@
 
 ### 1.2 InsertionSort Unit Tests:
 
-![InsertionSort Unit Tests Passing Screenshot](src/main/resources/unit-tests-screenshots/InertionSortTests.png)
+![InsertionSort Unit Tests Passing Screenshot](/src/main/resources/unit-tests-screenshots/InertionSortTests.png)
 
 ## 2. Timing observations:
