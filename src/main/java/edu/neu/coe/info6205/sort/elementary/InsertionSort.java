@@ -63,21 +63,14 @@ public class InsertionSort<X extends Comparable<X>> extends SortWithHelper<X> {
      */
     public void sort(X[] xs, int from, int to) {
         final Helper<X> helper = getHelper();
-        if (from > to)
-            throw new IllegalArgumentException("The start index is higher than the finish index.");
-        if (from < 0 || to > xs.length)
-            throw new ArrayIndexOutOfBoundsException("One of the indices is out of bounds");
-
         for (int i = from + 1; i < to; i++) {
-            X key = xs[i];
-            int j = i - 1;
-            while (j >= 0 && xs[j].compareTo(key) > 0) {
-                helper.swap(xs, j, j + 1);
-                j = j - 1;
+            int j = i;
+            while (j > from && helper.swapStableConditional(xs, j)) {
+                j--;
             }
-            xs[j + 1] = key;
         }
-        // FIXME
-        // END
+
     }
+  
 }
+
