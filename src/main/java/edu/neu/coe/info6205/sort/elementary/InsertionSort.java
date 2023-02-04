@@ -10,6 +10,8 @@ import edu.neu.coe.info6205.util.Config;
 
 public class InsertionSort<X extends Comparable<X>> extends SortWithHelper<X> {
 
+    public static final String DESCRIPTION = "Insertion sort";
+
     /**
      * Constructor for any sub-classes to use.
      *
@@ -48,6 +50,10 @@ public class InsertionSort<X extends Comparable<X>> extends SortWithHelper<X> {
         this(BaseHelper.getHelper(InsertionSort.class));
     }
 
+    public static <T extends Comparable<T>> void sort(T[] ts) {
+        new InsertionSort<T>().mutatingSort(ts);
+    }
+
     /**
      * Sort the sub-array xs:from:to using insertion sort.
      *
@@ -57,14 +63,21 @@ public class InsertionSort<X extends Comparable<X>> extends SortWithHelper<X> {
      */
     public void sort(X[] xs, int from, int to) {
         final Helper<X> helper = getHelper();
+        if (from > to)
+            throw new IllegalArgumentException("The start index is higher than the finish index.");
+        if (from < 0 || to > xs.length)
+            throw new ArrayIndexOutOfBoundsException("One of the indices is out of bounds");
 
+        for (int i = from + 1; i < to; i++) {
+            X key = xs[i];
+            int j = i - 1;
+            while (j >= 0 && xs[j].compareTo(key) > 0) {
+                helper.swap(xs, j, j + 1);
+                j = j - 1;
+            }
+            xs[j + 1] = key;
+        }
         // FIXME
-        // END 
-    }
-
-    public static final String DESCRIPTION = "Insertion sort";
-
-    public static <T extends Comparable<T>> void sort(T[] ts) {
-        new InsertionSort<T>().mutatingSort(ts);
+        // END
     }
 }
