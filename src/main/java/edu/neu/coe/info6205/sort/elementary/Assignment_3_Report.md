@@ -7,10 +7,14 @@
 
 ## 0. The files needed or I modified in assignment 3:
 
-- [InsertionSort.java](/src/main/java/edu/neu/coe/info6205/sort/elementary/RandomSort.java)
+- [InsertionSort.java](/src/main/java/edu/neu/coe/info6205/sort/elementary/InsertionSort.java)
+    - Added the implementation of `sort` method.
 - [Timer.java](/src/main/java/edu/neu/coe/info6205/util/Timer.java)
+    - Added the Implementation of `repeat`,`toMillisecs` `getClock` methods.
 - [InsertionSortBenchmarkDemo.java](/src/main/java/edu/neu/coe/info6205/sort/elementary/InsertionSortBenchmarkDemo.java)
-
+    - Added this file to test the runing time of insertion sort for 4 different
+      sorted types arrays.
+  
 ## 1. Unit Tests ScreenShots:
 
 ### 1.1 TimerTest:
