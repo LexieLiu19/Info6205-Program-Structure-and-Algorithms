@@ -95,8 +95,10 @@ public class Timer {
             if (preFunction != null) value = preFunction.apply(value);
             long startTime = getClock();
             U result = function.apply(value);
-            if (postFunction != null) postFunction.accept(result);
             long endTime = getClock();
+
+            if (postFunction != null) postFunction.accept(result);
+
             sumTime += toMillisecs(endTime - startTime);
             laps++;
 
