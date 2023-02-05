@@ -14,7 +14,7 @@ public class InsertionSortBenchmarkDemo {
             Integer[] arr = generateSortedArray(i);
             Timer timer = new Timer();
             double result = timer.repeat(100, () -> insertionSort.sort(arr));
-            System.out.println("Sorted array: length = " + i + ", took an average of " + result + " milliseconds to run.");
+            System.out.println("Array length = " + i + ", took an average of " + result + " milliseconds to run.");
 
         }
 
@@ -25,7 +25,7 @@ public class InsertionSortBenchmarkDemo {
             shuffleArray(arr);
             Timer timer = new Timer();
             double result = timer.repeat(100, () -> insertionSort.sort(arr));
-            System.out.println("Random array: length = " + i + ", took an average of " + result + " milliseconds to run.");
+            System.out.println("Array length = " + i + ", took an average of " + result + " milliseconds to run.");
 
         }
         System.out.println("Test running time for reversed sorted array: ");
@@ -35,7 +35,7 @@ public class InsertionSortBenchmarkDemo {
             reverseArray(arr);
             Timer timer = new Timer();
             double result = timer.repeat(100, () -> insertionSort.sort(arr));
-            System.out.println("Random array: length = " + i + ", took an average of " + result + " milliseconds to run.");
+            System.out.println("Array length = " + i + ", took an average of " + result + " milliseconds to run.");
 
         }
         System.out.println("Test running time for half sorted array: ");
@@ -45,7 +45,7 @@ public class InsertionSortBenchmarkDemo {
             halfSortedArray(arr);
             Timer timer = new Timer();
             double result = timer.repeat(100, () -> insertionSort.sort(arr));
-            System.out.println("Random array: length = " + i + ", took an average of " + result + " milliseconds to run.");
+            System.out.println("Array: length = " + i + ", took an average of " + result + " milliseconds to run.");
 
         }
 
