@@ -5,7 +5,7 @@
 - NUID：002761429
 - Date: Feb.11,2023.
 
-## 0. The files needed or I modified in assignment 3:
+## 0. The files needed or I modified in assignment 4:
 
 - [UF_HWQUPC.java](/src/main/java/edu/neu/coe/info6205/union_find/UF_HWQUPC.java)
     - Added the implementation of `find`, `mergeComponents`, `doPathCompression`
