@@ -163,7 +163,7 @@
 
 ### 3.1 The relationship between n and the number of connections:
 
-The relationship between the number of objects (n) and the number of connections
+Based on my observation, the relationship between the number of objects (n) and the number of connections
 required to reduce the number of components from n to 1 can be expressed as
 **connections = n - 1**. This conclusion is based on the idea that in a union-find
 algorithm, each connection between two objects reduces the number of components
