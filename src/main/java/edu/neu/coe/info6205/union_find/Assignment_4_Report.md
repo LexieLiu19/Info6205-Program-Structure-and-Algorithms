@@ -76,14 +76,9 @@
 
 ## 2. UFClient observations:
 
-![Timing Observations On 4 Types Arrays](/src/main/resources/screen_shots/runningtime_of_arrays.png)
+### 2.1 The relationship between N and connections:
+
+![The relationship between N and connections]()
 
 ## 3. Conclusion:
 
-From the running time observations, we can draw a conclusion: generally,
-Insertion sort has the best performance when the array is already sorted. The
-time complexity is O(n). When the array is randomly ordered, namely, un-sorted,
-the average-time complexity is O(n^2). When the array is reversely sorted, the
-running time is even longer. The worst-case of time complexity is O(n^2). When
-the array is half-sorted, the time complexity can be anywhere between O(n) and
-O(n^2), depending on the distribution of the sorted and unsorted elements.
