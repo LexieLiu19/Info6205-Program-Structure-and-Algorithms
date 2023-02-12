@@ -14,25 +14,13 @@ public class UFClient {
 
         // following code are for my observation of the number N and the connections:
 
-        int n = 1000;
-        int trails = 100;
-        int[] connections = new int[n];
-        for (int i = 0; i < n; i++) {
-            int connection = getAvg(i + 1, trails);
-            System.out.println("For n = " + (i + 1) + ", the average number of connections is " + connection);
-
+        int n = 100000;
+        for (int i = 1; i < n; i *= 5) {
+            System.out.println("n:" + i + "; connects: " + count(i));
         }
 
     }
 
-    private static int getAvg(int n, int trails) {
-        int connects = 0;
-        for (int i = 0; i < trails; i++) {
-            connects += count(n);
-        }
-        return connects / trails;
-
-    }
 
     public static int count(int n) {
         UF_HWQUPC uf = new UF_HWQUPC(n);

@@ -176,7 +176,7 @@ public class UF_HWQUPC implements UF {
     }
 
     private void mergeComponents(int i, int j) {
-        // FIXME make shorter root point to taller one
+        //  make shorter root point to taller one
         int root1 = i;
         int root2 = j;
         if (height[root1] < height[root2]) {
@@ -189,14 +189,13 @@ public class UF_HWQUPC implements UF {
         }
         count--;
 
-
     }
 
     /**
      * This implements the single-pass path-halving mechanism of path compression
      */
     private void doPathCompression(int i) {
-        // FIXME update parent to value of grandparent
+        //  update parent to value of grandparent
         int root = find(i);
         parent[i] = root;
     }
