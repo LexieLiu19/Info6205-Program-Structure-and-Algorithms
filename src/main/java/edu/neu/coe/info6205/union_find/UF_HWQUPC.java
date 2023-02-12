@@ -13,15 +13,10 @@ import java.util.Arrays;
  * Height-weighted Quick Union with Path Compression
  */
 public class UF_HWQUPC implements UF {
-    /**
-     * Ensure that site p is connected to site q,
-     *
-     * @param p the integer representing one site
-     * @param q the integer representing the other site
-     */
-    public void connect(int p, int q) {
-        if (!isConnected(p, q)) union(p, q);
-    }
+    private final int[] parent;   // parent[i] = parent of i
+    private final int[] height;   // height[i] = height of subtree rooted at i
+    private int count;  // number of components
+    private boolean pathCompression;
 
     /**
      * Initializes an empty union–find data structure with {@code n} sites
@@ -56,6 +51,16 @@ public class UF_HWQUPC implements UF {
         this(n, true);
     }
 
+    /**
+     * Ensure that site p is connected to site q,
+     *
+     * @param p the integer representing one site
+     * @param q the integer representing the other site
+     */
+    public void connect(int p, int q) {
+        if (!isConnected(p, q)) union(p, q);
+    }
+
     public void show() {
         for (int i = 0; i < parent.length; i++) {
             System.out.printf("%d: %d, %d\n", i, parent[i], height[i]);
@@ -81,8 +86,15 @@ public class UF_HWQUPC implements UF {
     public int find(int p) {
         validate(p);
         int root = p;
-        // FIXME
-        // END 
+        while (root != parent[root])
+            root = parent[root];
+        if (pathCompression) {
+            while (p != root) {
+                int next = parent[p];
+                parent[p] = root;
+                p = next;
+            }
+        }
         return root;
     }
 
@@ -163,14 +175,21 @@ public class UF_HWQUPC implements UF {
         return parent[i];
     }
 
-    private final int[] parent;   // parent[i] = parent of i
-    private final int[] height;   // height[i] = height of subtree rooted at i
-    private int count;  // number of components
-    private boolean pathCompression;
-
     private void mergeComponents(int i, int j) {
         // FIXME make shorter root point to taller one
-        // END 
+        int root1 = i;
+        int root2 = j;
+        if (height[root1] < height[root2]) {
+            parent[root1] = root2;
+        } else if (height[root1] > height[root2]) {
+            parent[root2] = root1;
+        } else {
+            parent[root2] = root1;
+            height[root1]++;
+        }
+        count--;
+
+
     }
 
     /**
@@ -178,6 +197,7 @@ public class UF_HWQUPC implements UF {
      */
     private void doPathCompression(int i) {
         // FIXME update parent to value of grandparent
-        // END 
+        int root = find(i);
+        parent[i] = root;
     }
 }
