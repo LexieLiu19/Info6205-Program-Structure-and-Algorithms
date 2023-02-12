@@ -64,7 +64,7 @@
 ```
 
 - [UFClient.java](/src/main/java/edu/neu/coe/info6205/union_find/UFClient.java)
-    - Added the Implementation of `count``count2` and `main` methods.
+    - Added the Implementation of `count`, `count2` and `main` methods.
 
  ```
 
@@ -72,11 +72,11 @@
         
         import java.util.Random;
         
-        public class UFClient { public static void main(String[] args) { /*Following is
-        the code that take command line value as N*/ /*
+        public class UFClient { public static void main(String[] args) { 
+        /*Following is the code that take command line value as N*/ 
+        /*
         int n = Integer.parseInt(args[0]); int connections = count(n);
         System.out.println("The connections are: " + connections);
-        
         * */
         
         // Observe the relationship between N and connections:
