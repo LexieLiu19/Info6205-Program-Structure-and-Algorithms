@@ -187,7 +187,7 @@ public class UF_HWQUPC implements UF {
             parent[root2] = root1;
             height[root1]++;
         }
-        count--;
+     
 
     }
 

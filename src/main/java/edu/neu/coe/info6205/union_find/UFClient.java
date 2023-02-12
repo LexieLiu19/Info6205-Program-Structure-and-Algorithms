@@ -4,23 +4,30 @@ import java.util.Random;
 
 public class UFClient {
     public static void main(String[] args) {
-        /* Following code: enter a value of n and print the value of connect all these n numbers.*/
+        /*Following is the code that take command line value as N*/
+        /*
+            int n = Integer.parseInt(args[0]);
+            int connections = count(n);
+            System.out.println("The connections are: " + connections);
+         * */
 
-//        System.out.println("Please enter a value: ");
-//        Scanner sc = new Scanner(System.in);
-//        int n = sc.nextInt();
-//        int connections = count(n);
-//        System.out.println("The connections are: " + connections);
+//         Observe the relationship between N and connections:
+        int n = 80000;
+        for (int i = 1; i < n; i *= 4) {
+            System.out.println("n:" + i + "; connections: " + count(i));
+        }
 
-        // following code are for my observation of the number N and the connections:
 
-        int n = 100000;
-        for (int i = 1; i < n; i *= 5) {
-            System.out.println("n:" + i + "; connects: " + count(i));
+        //Observe the relation between N and the number of the random number pairs:
+        int n2 = 50000;
+        int trails = 100;
+        for (int i = 100; i < n2; i *= 2) {
+            int mean = getMean(i, trails);
+            System.out.println("n: " + i + "; m: " + mean + "; 1/2NlogN: " + (int) (0.5 * i * Math.log(i)));
+
         }
 
     }
-
 
     public static int count(int n) {
         UF_HWQUPC uf = new UF_HWQUPC(n);
@@ -39,4 +46,28 @@ public class UFClient {
         return connections;
     }
 
+    public static int countM(int n) {
+        UF_HWQUPC uf = new UF_HWQUPC(n);
+        Random random = new Random();
+        int pair = 0;
+        while (uf.components() > 1) {
+            int p = random.nextInt(n);
+            int q = random.nextInt(n);
+            pair++;
+            if (!uf.isConnected(p, q)) {
+                uf.connect(p, q);
+            }
+        }
+
+        return pair;
+    }
+
+    private static int getMean(int n, int trails) {
+        int sum = 0;
+        for (int i = 0; i < trails; i++) {
+            sum += countM(n);
+        }
+        return sum / trails;
+    }
 }
+
