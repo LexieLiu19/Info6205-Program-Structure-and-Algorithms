@@ -14,7 +14,6 @@
 ```
     /**
      * Returns the component identifier for the component containing site {@code p}.
-     *
      * @param p the integer representing one site
      * @return the component identifier for the component containing site {@code p}
      * @throws IllegalArgumentException unless {@code 0 <= p < n}
@@ -159,7 +158,7 @@
 
 The relationship between the number of objects (n) and the number of connections
 required to reduce the number of components from n to 1 can be expressed as
-connections = n - 1. This conclusion is based on the idea that in a union-find
+**connections = n - 1**. This conclusion is based on the idea that in a union-find
 algorithm, each connection between two objects reduces the number of components
 by 1. As a result, in order to reduce the number of components from n to 1, n-1
 connections must be made.
@@ -173,7 +172,7 @@ can be expressed as connections = n - 1.
 
 The relationship between n and the number of connections (m) in the
 height-weighted Quick Union with Path Compression algorithm can be approximately
-described as m = 1/2*N * log N. The logarithmic factor in this equation is a
+described as **m = 1/2*N * log N**. The logarithmic factor in this equation is a
 result of the fact that, as the number of components decreases, the cost of
 connecting two remaining components also decreases logarithmically.
 
