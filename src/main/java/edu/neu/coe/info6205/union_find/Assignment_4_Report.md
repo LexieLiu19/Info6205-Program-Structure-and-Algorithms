@@ -8,9 +8,8 @@
 ## 0. The files needed or I modified in assignment 3:
 
 - [UF_HWQUPC.java](/src/main/java/edu/neu/coe/info6205/union_find/UF_HWQUPC.java)
-    - Added the implementation of `find``mergeComponents``doPathCompression`
+    - Added the implementation of `find`, `mergeComponents`, `doPathCompression`
       methods:
-    ```java
 
 ```
     /**
@@ -66,7 +65,6 @@
 
 - [UFClient.java](/src/main/java/edu/neu/coe/info6205/union_find/UFClient.java)
     - Added the Implementation of `count``count2` and `main` methods.
-  ```java
 
  ```
 
@@ -138,8 +136,6 @@
         }
     
     }
-
-```
 
 ```
 
