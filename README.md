@@ -8,3 +8,5 @@ Assignments for INFO6205-Program-Structure-and-Algorithms
   3: [Benchmark](/src/main/java/edu/neu/coe/info6205/sort/elementary/Assignment_3_Report.md)
 - Assignment
   4: [WQUPC](/src/main/java/edu/neu/coe/info6205/union_find/Assignment_4_Report.md)
+- Assignment
+  5:[Parallel Sorting](/src/main/java/edu/neu/coe/info6205/sort/par/Assignment5-ParSort.md)
