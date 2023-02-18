@@ -15,7 +15,7 @@ algorithm sorts each partition of the input array in parallel.
    parallelism. The `cutoff` value is initially set to 1000, but it can be
    updated based one the first argument in the command line when running.
 2. The results of the experiments should involve sorting arrays of sufficient
-   size of parallel sorting and be run with different cutoffs and different
+   size of parallel sorting and be running with different cutoffs and different
    threads should be used. Draw a conclusion about the efficacy of the
    parallelizing sort.
 
