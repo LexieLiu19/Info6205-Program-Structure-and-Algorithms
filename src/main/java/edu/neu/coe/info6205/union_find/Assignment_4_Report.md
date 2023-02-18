@@ -5,16 +5,23 @@
 - NUID：002761429
 - Date: Feb.11,2023.
 
-## 0. The files needed or I modified in assignment 3:
+
+## 0. Tasks:
+
+#### 1. Implement height-weighted Quick Union with Path Compression and pass the unit tests;
+#### 2. Build UFClient: include a  `count` method to count the connections and `main` method to run tests.
+#### 3. Observe and draw conclusions about the relationships between n and connections, n and the number of random number pairs.
+
+## 1. Files:
+
+###  The files I modified and added in assignment 4:
 
 - [UF_HWQUPC.java](/src/main/java/edu/neu/coe/info6205/union_find/UF_HWQUPC.java)
     - Added the implementation of `find`, `mergeComponents`, `doPathCompression`
       methods:
-
 ```
     /**
      * Returns the component identifier for the component containing site {@code p}.
-     *
      * @param p the integer representing one site
      * @return the component identifier for the component containing site {@code p}
      * @throws IllegalArgumentException unless {@code 0 <= p < n}
@@ -34,7 +41,6 @@
         return root;
     }
 ```
-
 ```java 
   /**
      * This implements the single-pass path-halving mechanism of path compression
@@ -67,7 +73,6 @@
     - Added the Implementation of `count`, `count2` and `main` methods.
 
  ```
-
         package edu.neu.coe.info6205.union_find;
         
         import java.util.Random;
@@ -138,18 +143,19 @@
     }
 
 ```
+## 2. Evidences:
 
-## 1. Unit Tests ScreenShots:
+### 2.1. Unit Tests ScreenShots:
 
 ![Unit Tests Passing Screenshot](/src/main/resources/screen_shots/UF_Unit_Tests.png)
 
-## 2. UFClient observations:
+### 2.2. UFClient observations:
 
-### 2.1 The relationship between N and connections:
+#### The relationship between N and connections:
 
 ![The relationship between N and connections](/src/main/resources/screen_shots/relations_N_Connections.png)
 
-### 2.2 The relationship between N and the pair of random numbers.
+#### The relationship between N and the pair of random numbers.
 
 ![The relationship between N and the pair of random numbers](/src/main/resources/screen_shots/relations_N_m.png)
 
@@ -157,9 +163,9 @@
 
 ### 3.1 The relationship between n and the number of connections:
 
-The relationship between the number of objects (n) and the number of connections
+Based on my observation, the relationship between the number of objects (n) and the number of connections
 required to reduce the number of components from n to 1 can be expressed as
-connections = n - 1. This conclusion is based on the idea that in a union-find
+**connections = n - 1**. This conclusion is based on the idea that in a union-find
 algorithm, each connection between two objects reduces the number of components
 by 1. As a result, in order to reduce the number of components from n to 1, n-1
 connections must be made.
@@ -173,7 +179,7 @@ can be expressed as connections = n - 1.
 
 The relationship between n and the number of connections (m) in the
 height-weighted Quick Union with Path Compression algorithm can be approximately
-described as m = 1/2*N * log N. The logarithmic factor in this equation is a
+described as **m = 1/2*N * log N**. The logarithmic factor in this equation is a
 result of the fact that, as the number of components decreases, the cost of
 connecting two remaining components also decreases logarithmically.
 
