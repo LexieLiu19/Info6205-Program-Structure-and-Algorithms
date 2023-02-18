@@ -21,6 +21,27 @@ algorithm sorts each partition of the input array in parallel.
 ## 1. Files:
 
 - [par/Main.java](/src/main/java/edu/neu/coe/info6205/sort/par/Main.java)
-- -[par/ParSort.java](/src/main/java/edu/neu/coe/info6205/sort/par/ParSort.java)
+- [par/ParSort.java](/src/main/java/edu/neu/coe/info6205/sort/par/ParSort.java)
+- [Performance Observations](/src/main/resources/Performance_Par_Sort.xlsx)
 
 ## 2. Evidences:
+
+![Different performances in different numbers of threads and Cutoffs](/src/main/resources/screen_shots/performance.png)
+
+## 3. Conclusion:
+
+In our case, the efficiency of the parallel sorting algorithm depends on several
+factors:
+
+- The size of the input array: If the array size is small, the overhead of
+  parallelization may outweigh the benefits. If the array is large, the
+  parallelization can significantly improve the sorting time.
+- The number of available threads: the more threads available, the more
+  partition can be processed. However, if there's too many threads, the overhead
+  of thread management can slow down the algorithm.
+- The `cutoff` value: the `cutoff` value determines the minimum sizes of
+  sub-arrays that will be sorted in parallel. If the `cutoff` is too small,
+  there will be too many small sub-arrays to be sorted, which will slow down the
+  algorithm. If the `cutoff` value is too large, there'll be too much work to be
+  done in a single thread, which can also negatively impact the performance of
+  the algorithm.

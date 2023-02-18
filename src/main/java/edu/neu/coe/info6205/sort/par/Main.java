@@ -16,6 +16,9 @@ import java.util.concurrent.ForkJoinPool;
  */
 public class Main {
 
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    private static final Map<String, Integer> configuration = new HashMap<>();
+
     public static void main(String[] args) {
         processArgs(args);
         System.out.println("Degree of parallelism: " + ForkJoinPool.getCommonPoolParallelism());
@@ -28,7 +31,8 @@ public class Main {
             long time;
             long startTime = System.currentTimeMillis();
             for (int t = 0; t < 10; t++) {
-                for (int i = 0; i < array.length; i++) array[i] = random.nextInt(10000000);
+                for (int i = 0; i < array.length; i++)
+                    array[i] = random.nextInt(10000000);
                 ParSort.sort(array, 0, array.length);
             }
             long endTime = System.currentTimeMillis();
@@ -74,16 +78,18 @@ public class Main {
         if (x.equalsIgnoreCase("N")) setConfig(x, Integer.parseInt(y));
         else
             // TODO sort this out
-            if (x.equalsIgnoreCase("P")) //noinspection ResultOfMethodCallIgnored
-                ForkJoinPool.getCommonPoolParallelism();
+            if (x.equalsIgnoreCase("-P")) //noinspection ResultOfMethodCallIgnored
+            {
+                System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", y);
+                System.out.println("The number of Threads: " + y);
+
+            }
+//                ForkJoinPool.getCommonPoolParallelism();
     }
 
     private static void setConfig(String x, int i) {
         configuration.put(x, i);
     }
-
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private static final Map<String, Integer> configuration = new HashMap<>();
 
 
 }
