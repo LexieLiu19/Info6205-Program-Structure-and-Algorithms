@@ -64,14 +64,28 @@ MergeSortTest:
 ## 4. Data and Graphs
 
 - MergeSort:
+    - data:
 
-![MergeSort Data](/src/main/resources/screen_shots/Mergesortdata.png)
-![MergeSort graph](/src/main/resources/screen_shots/mergeSortGraph.png)
+      ![MergeSort Data](/src/main/resources/screen_shots/Mergesortdata.png)
+
+    - graph:
+
+      ![MergeSort graph](/src/main/resources/screen_shots/mergeSortGraph.png)
 
 - QuickSort:
-  ![QuickSort Data](/src/main/resources/screen_shots/quicksortdata.png)
-  ![QuickSort graph](/src/main/resources/screen_shots/quicksortgraph.png)
+    - data:
+
+      ![QuickSort Data](/src/main/resources/screen_shots/quicksortdata.png)
+
+    - graph:
+
+      ![QuickSort graph](/src/main/resources/screen_shots/quicksortgraph.png)
 
 - HeapSort:
-  ![HeapSort data](/src/main/resources/screen_shots/heapSortdata.png)
-  ![HeapSort graph](/src/main/resources/screen_shots/heapSortGraph.png)
+    - data:
+
+      ![HeapSort data](/src/main/resources/screen_shots/heapSortdata.png)
+
+    - graph:
+  
+      ![HeapSort graph](/src/main/resources/screen_shots/heapSortGraph.png)
